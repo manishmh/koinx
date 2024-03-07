@@ -12,7 +12,7 @@ const Navbar = () => {
         height={30}
         className=""
       />
-      {/* <MobileNavbar /> */}
+      <MobileNavbar />
       <div className="gap-6 items-center hidden md:flex">
         <NavbarItem link="/" item="crypto taxes"/>
         <NavbarItem link="/" item="free tools"/>
@@ -25,9 +25,9 @@ const Navbar = () => {
 
 export default Navbar;
 
-export function NavbarItem({ link, item }: { link: string, item: string}) {
+export function NavbarItem({ link, item, onClick }: { link: string, item: string, onClick?: () => void;}) {
   return (
-    <Link href={link}>
+    <Link href={link} onClick={onClick}>
       <span className="capitalize font-semibold md:text-sm text-white md:text-[#0F1629]">{ item }</span>
     </Link>
   );
