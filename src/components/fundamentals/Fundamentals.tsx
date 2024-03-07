@@ -4,7 +4,7 @@ const Fundamentals = ({ activeCategory, coinData }: { activeCategory: string, co
   return (
     <div
       className={`bg-white rounded-b-lg font-semibold text-gray-700 px-4 py-12 flex flex-col justify-center
-            ${activeCategory === "rounded-t-lg"} 
+            ${activeCategory === "fundamentals" && "rounded-t-lg mt-4"} 
         `}
     >
       <h1 className="pb-4 text-xl">Fundamentals</h1>
