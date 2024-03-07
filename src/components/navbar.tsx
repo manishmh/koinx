@@ -12,7 +12,7 @@ const Navbar = () => {
         height={30}
         className=""
       />
-      <MobileNavbar />
+      {/* <MobileNavbar /> */}
       <div className="gap-6 items-center hidden md:flex">
         <NavbarItem link="/" item="crypto taxes"/>
         <NavbarItem link="/" item="free tools"/>
