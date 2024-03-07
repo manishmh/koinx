@@ -9,7 +9,7 @@ const SubCategory = ({
 }) => {
   return (
     <div
-      className={` font-medium pb-2 cursor-pointer capitalize
+      className={` font-medium pb-2 cursor-pointer capitalize flex-shrink-0
         ${
           category.toLocaleLowerCase() === activeCategory
             ? "text-blue-800 border-b-[3px] border-blue-700"

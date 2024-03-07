@@ -17,7 +17,7 @@ const CategorySwitcher = ({ coinData, cryptoId }: { coinData: any, cryptoId: str
   }
   return (
     <div className="mt-8">
-        <div className="flex gap-6 relative flex-wrap">
+        <div className="flex gap-6 relative overflow-scroll">
             <div className="h-[1px] bg-gray-300 w-full absolute bottom-0"></div>
             <SubCategory category="Overview" onClick={() => handleActiveCategory("overview")} activeCategory={activeCategory}/>
             <SubCategory category="Fundamentals" onClick={() => handleActiveCategory("fundamentals")} activeCategory={activeCategory}/>
