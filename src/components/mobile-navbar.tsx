@@ -15,9 +15,9 @@ const MobileNavbar = () => {
   return (
     <div className="md:hidden">
       <MdMenu className={`text-3xl ${!navbarOpen ? "opacity-100" : "opacity-0"}`} onClick={handleNavbar}/>
-      <div className={`absolute bg-black bg-opacity-20 px-6 py-4 right-0 h-screen top-0 transition-transform duration-300 z-50
+      <div className={`absolute bg-black bg-opacity-40 px-6 py-4 right-0 h-screen top-0 transition-transform duration-300 
         ${!navbarOpen && "translate-x-full"} 
-      `}>
+      `} style={{ zIndex: 999}}>
         <div className="flex justify-end">
           <IoClose className="text-3xl" onClick={handleNavbar}/>
         </div>
@@ -25,7 +25,7 @@ const MobileNavbar = () => {
           <NavbarItem link="/" item="crypto taxes" />
           <NavbarItem link="/" item="free tools" />
           <NavbarItem link="/" item="resource center" />
-          <button className="capitalize font-semibold text-white bg-[#1B4AEF] px-4 py-2 rounded-md text-sm">Get Started</button>
+          <button className="capitalize font-semibold text-white bg-[#1B4AEF] px-4 py-2 rounded-md md:text-sm">Get Started</button>
         </div>
       </div>
     </div>

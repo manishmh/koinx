@@ -43,7 +43,7 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
                 percent={coinData.usd_24h_change}
               />
             )}
-            <div className="h-[500px] overflow-hidden">
+            <div className="h-[500px] overflow-hidden mt-4">
               <TradingViewWidget cryptoId={cryptoId}/>
             </div>
           </div>

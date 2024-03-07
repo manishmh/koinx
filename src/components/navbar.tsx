@@ -4,7 +4,7 @@ import MobileNavbar from "./mobile-navbar";
 
 const Navbar = () => {
   return (
-    <div className="px-6 md:px-8 py-4 flex justify-between items-center relative shadow-sm overflow-hidden z-50 max-w-[1980px] mx-auto">
+    <div className="px-6 md:px-8 py-4 flex justify-between items-center shadow-sm overflow-hidden z-50 max-w-[1980px] mx-auto">
       <Image
         src="/logo.png"
         alt="navbar-brand-logo"
@@ -12,7 +12,7 @@ const Navbar = () => {
         height={30}
         className=""
       />
-      {/* <MobileNavbar /> */}
+      <MobileNavbar />
       <div className="gap-6 items-center hidden md:flex">
         <NavbarItem link="/" item="crypto taxes"/>
         <NavbarItem link="/" item="free tools"/>
@@ -28,7 +28,7 @@ export default Navbar;
 export function NavbarItem({ link, item }: { link: string, item: string}) {
   return (
     <Link href={link}>
-      <span className="capitalize font-semibold text-sm text-[#0F1629]">{ item }</span>
+      <span className="capitalize font-semibold md:text-sm text-white md:text-[#0F1629]">{ item }</span>
     </Link>
   );
 }
