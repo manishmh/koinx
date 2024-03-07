@@ -4,7 +4,7 @@ const Teams = () => {
   return (
     <div className="bg-white mt-4 p-4 rounded-lg pb-8">
       <h1 className="text-gray-800 font-semibold text-2xl">Team</h1>
-      <p className="py-4 mt-2">
+      <p className="py-4 mt-2 mb-4 md:mb-0">
         Lorem ipsum dolor sit amet consectetur. Aliquam placerat sit lobortis
         tristique pharetra. Diam id et lectus urna et tellus aliquam dictum at.
         Viverra diam suspendisse enim facilisi diam ut sed.

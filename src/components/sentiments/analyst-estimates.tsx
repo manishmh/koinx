@@ -11,7 +11,7 @@ const AnalystEstimates = ({
   return (
     <div className="py-8">
       <h1 className="text-lg font-semibold text-gray-700">Analyst Estimates</h1>
-      <div className="flex gap-12 mt-8 w-10/12">
+      <div className="flex gap-12 mt-8 w-full md:w-10/12 flex-col md:flex-row items-center md:items-start">
         <div
           className={`h-28 w-28 rounded-full flex justify-center items-center text-3xl font-semibold flex-shrink-0
               ${
@@ -23,7 +23,7 @@ const AnalystEstimates = ({
         >
           {dominant}%
         </div>
-        <div className="flex-1 flex flex-col justify-between py-2">
+        <div className="flex-1 flex flex-col justify-between py-2 w-full">
           <div className="text-gray-600 flex items-center gap-6">
             <div className="w-10">Buy</div>
             <div className="h-2 rounded-full bg-green-500" style={{ width: `${buy}%`}}></div>

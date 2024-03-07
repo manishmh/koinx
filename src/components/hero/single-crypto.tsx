@@ -1,32 +1,55 @@
+'use client'
+
+import { CryptoDetails } from "@/api/CryptoDetails";
 import CategorySwitcher from "../category-switcher";
-import Performance from "../performance/performance";
 import ChevronRight from "../svgs/chevron-right";
 import CryptoRankHeader from "./crypto-rank-header";
 import GetStarted from "./get-started";
 import HeroCryptoPrice from "./hero-crypto-price";
 import TradingViewWidget from "./trading-view-widget";
 import TrendingCoin from "./trending-coin";
+import { useEffect, useState } from "react";
 
-const SingleCryptoPage = ({}) => {
+const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
+  const [coinData, setCoinData] = useState<any>(null)
+  useEffect(() => {
+    const url =
+      `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=inr%2Cusd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`;
+    CryptoDetails(url)
+      .then((data) => {
+        console.log("Dataaa: ", data);
+        setCoinData(data[cryptoId])
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+
   return (
     <div>
       <div className="flex items-center py-2">
         <span className="text-[#6b7275]">Cryptocurrencies</span>
         <ChevronRight />
-        <span className="capitalize">bitcoin</span>
+        <span className="capitalize">{cryptoId}</span>
       </div>
       <div className="flex justify-between gap-4">
         <div className="w-full flex flex-col gap-4">
           <div className="h-full bg-white p-4 rounded-lg">
-            <CryptoRankHeader name="Bitcoin" rank={1} acr="BTC" />
-            <HeroCryptoPrice usd={46953} inr={3942308} percent={3} />
+            <CryptoRankHeader name={cryptoId} rank={1} acr={cryptoId.toUpperCase()}/>
+            {coinData && coinData.usd && coinData.inr && ( 
+              <HeroCryptoPrice
+                usd={coinData.usd}
+                inr={coinData.inr}
+                percent={coinData.usd_24h_change}
+              />
+            )}
             <div className="h-[500px] overflow-hidden">
-              <TradingViewWidget />
+              <TradingViewWidget cryptoId={cryptoId}/>
             </div>
           </div>
-          <CategorySwitcher />
+          <CategorySwitcher coinData={coinData} cryptoId={cryptoId}/>
         </div>
-        <div className="space-y-4 flex-shrink-0 hidden lg:flex flex-col">
+        <div className="space-y-4 flex-shrink-0 hidden xl:flex flex-col">
           <GetStarted />
           <TrendingCoin />
         </div>

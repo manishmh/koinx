@@ -15,7 +15,7 @@ const MobileNavbar = () => {
   return (
     <div className="md:hidden">
       <MdMenu className={`text-3xl ${!navbarOpen ? "opacity-100" : "opacity-0"}`} onClick={handleNavbar}/>
-      <div className={`absolute bg-black bg-opacity-20 px-6 py-4 right-0 h-screen top-0 transition-transform duration-300 
+      <div className={`absolute bg-black bg-opacity-20 px-6 py-4 right-0 h-screen top-0 transition-transform duration-300 z-50
         ${!navbarOpen && "translate-x-full"} 
       `}>
         <div className="flex justify-end">

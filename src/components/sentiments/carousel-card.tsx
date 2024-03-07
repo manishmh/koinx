@@ -15,7 +15,7 @@ const CarouselCard = ({
 }) => {
   return (
     <div
-      className={`${bgColor} bg-opacity-20 rounded-xl max-w-lg flex gap-2 px-4 py-6 flex-shrink-0 transition-all duration-500`}
+      className={`${bgColor} bg-opacity-20 rounded-xl max-w-xs sm:max-w-md md:max-w-lg flex gap-2 px-4 py-6 flex-shrink-0 transition-all duration-500`}
       style={{ transform: translateX }} 
     >
       <div className={`rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 p-1 ${bgColor}`}>

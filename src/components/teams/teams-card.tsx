@@ -12,8 +12,8 @@ const TeamsCard = ({
   about: string;
 }) => {
   return (
-    <div className="py-2 px-4 bg-blue-50 rounded-md flex gap-8">
-      <div className="flex-shrink-0">
+    <div className="py-6 md:py-2 px-4 bg-blue-50 rounded-md flex gap-8 flex-col sm:flex-row">
+      <div className="flex-shrink-0 flex flex-col items-center">
         <Image
           src={src}
           alt={`team-member-image-${memberName}`}
