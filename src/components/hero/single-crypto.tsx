@@ -26,7 +26,7 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
   }, []);
 
   return (
-    <div>
+    <>
       <div className="flex items-center py-2">
         <span className="text-[#6b7275]">Cryptocurrencies</span>
         <ChevronRight />
@@ -35,7 +35,7 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
       <div className="flex justify-between gap-4 flex-col xl:flex-row">
         <div className="w-full flex flex-col gap-4">
           <div className="h-full bg-white p-4 rounded-lg">
-            <CryptoRankHeader name={cryptoId} rank={1} acr={cryptoId.toUpperCase()}/>
+            <CryptoRankHeader name={cryptoId} rank={1} acr={cryptoId.substring(0, 3).toUpperCase()}/>
             {coinData && coinData.usd && coinData.inr && ( 
               <HeroCryptoPrice
                 usd={coinData.usd}
@@ -54,7 +54,7 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
           <TrendingCoin />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

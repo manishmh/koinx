@@ -1,13 +1,13 @@
 'use client'
 
 import { useState } from "react"
-import SubCategory from "./sub-category"
-import Performance from "./performance/performance"
-import Fundamentals from "./fundamentals/Fundamentals"
-import Sentiments from "./sentiments/Sentiments"
 import AboutBitcoin from "./about-bitcoin/about-coin"
-import Tokenomics from "./tokenomics"
+import Fundamentals from "./fundamentals/Fundamentals"
+import Performance from "./performance/performance"
+import Sentiments from "./sentiments/Sentiments"
+import SubCategory from "./sub-category"
 import Teams from "./teams/teams"
+import Tokenomics from "./tokenomics"
 
 const CategorySwitcher = ({ coinData, cryptoId }: { coinData: any, cryptoId: string}) => {
   const [activeCategory, setActiveCategory] = useState<string>("overview")
@@ -34,16 +34,16 @@ const CategorySwitcher = ({ coinData, cryptoId }: { coinData: any, cryptoId: str
             <Fundamentals activeCategory={activeCategory} coinData={coinData && coinData} />
         )}
         {(activeCategory === "overview" || activeCategory === "sentiments") && (
-          <Sentiments />
+            <Sentiments />
         )}
         {(activeCategory === "overview" || activeCategory === "new insights") && (
-          <AboutBitcoin coinData={coinData && coinData} cryptoId={cryptoId}/>
+            <AboutBitcoin coinData={coinData && coinData} cryptoId={cryptoId}/>
         )}
         {(activeCategory === "overview" || activeCategory === "tokenomics") && (
-          <Tokenomics />
+            <Tokenomics />
         )}
         {(activeCategory === "overview" || activeCategory === "team") && (
-          <Teams />
+            <Teams />
         )}
     </div>
   )
