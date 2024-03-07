@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const GetStarted = () => {
   return (
-    <div className="bg-[#0052FE] text-white rounded-xl py-8 px-6 max-w-sm flex flex-col items-center text-center">
+    <div className="bg-[#0052FE] text-white rounded-xl py-8 px-6 max-w-sm flex flex-col items-center text-center justify-center">
         <h1 className="font-semibold text-lg">Get Started with KoinX <br /> for FREE</h1>
         <h2 className="text-xs mt-4">With our range of features that you can equip for free, KoinX allows you to be more educated and aware of tax reports.</h2>
         <Image 

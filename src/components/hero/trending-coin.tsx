@@ -22,7 +22,7 @@ const TrendingCoin = () => {
   }, []);
 
   return (
-    <div className="bg-white max-w-sm rounded-xl px-4 py-6">
+    <div className="bg-white max-w-sm rounded-xl px-4 py-6 w-full">
       <h1 className="font-semibold text-xl">Trending Coins (24h)</h1>
       <div className="flex flex-col gap-4 mt-4">
         {trendingCoins &&

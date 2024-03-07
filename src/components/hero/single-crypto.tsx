@@ -32,7 +32,7 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
         <ChevronRight />
         <span className="capitalize">{cryptoId}</span>
       </div>
-      <div className="flex justify-between gap-4">
+      <div className="flex justify-between gap-4 flex-col xl:flex-row">
         <div className="w-full flex flex-col gap-4">
           <div className="h-full bg-white p-4 rounded-lg">
             <CryptoRankHeader name={cryptoId} rank={1} acr={cryptoId.toUpperCase()}/>
@@ -49,7 +49,7 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
           </div>
           <CategorySwitcher coinData={coinData} cryptoId={cryptoId}/>
         </div>
-        <div className="space-y-4 flex-shrink-0 hidden xl:flex flex-col">
+        <div className="flex-shrink-0 flex flex-wrap gap-4 xl:flex-col">
           <GetStarted />
           <TrendingCoin />
         </div>
