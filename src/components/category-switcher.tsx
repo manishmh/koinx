@@ -9,7 +9,7 @@ import AboutBitcoin from "./about-bitcoin/about-coin"
 import Tokenomics from "./tokenomics"
 import Teams from "./teams/teams"
 
-const CategorySwitcher = () => {
+const CategorySwitcher = ({ coinData, cryptoId }: { coinData: any, cryptoId: string}) => {
   const [activeCategory, setActiveCategory] = useState<string>("overview")
   console.log(activeCategory)
   const handleActiveCategory = (category: string) => {
@@ -17,7 +17,7 @@ const CategorySwitcher = () => {
   }
   return (
     <div className="mt-8">
-        <div className="flex gap-6 relative">
+        <div className="flex gap-6 relative flex-wrap">
             <div className="h-[1px] bg-gray-300 w-full absolute bottom-0"></div>
             <SubCategory category="Overview" onClick={() => handleActiveCategory("overview")} activeCategory={activeCategory}/>
             <SubCategory category="Fundamentals" onClick={() => handleActiveCategory("fundamentals")} activeCategory={activeCategory}/>
@@ -28,16 +28,16 @@ const CategorySwitcher = () => {
             <SubCategory category="Tokenomics" onClick={() => handleActiveCategory("tokenomics")} activeCategory={activeCategory}/>
         </div>
         {activeCategory === "overview" &&  (
-            <Performance activeCategory={activeCategory}/>
+            <Performance activeCategory={activeCategory} currentValue={coinData && coinData.usd}/>
         )}
         {(activeCategory === "overview" || activeCategory === "fundamentals") && (
-            <Fundamentals activeCategory={activeCategory}/>
+            <Fundamentals activeCategory={activeCategory} coinData={coinData && coinData} />
         )}
         {(activeCategory === "overview" || activeCategory === "sentiments") && (
           <Sentiments />
         )}
         {(activeCategory === "overview" || activeCategory === "new insights") && (
-          <AboutBitcoin />
+          <AboutBitcoin coinData={coinData && coinData} cryptoId={cryptoId}/>
         )}
         {(activeCategory === "overview" || activeCategory === "tokenomics") && (
           <Tokenomics />

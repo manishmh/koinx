@@ -1,20 +1,32 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef, memo } from 'react';
+import React, { memo, useEffect, useRef } from "react";
 
-function TradingViewWidget() {
+function TradingViewWidget({ cryptoId }: { cryptoId: string }) {
   const container = useRef<HTMLDivElement>(null);
-
+  let cryptoSymbol = "";
+  
+  const cryptoData: { [key: string]: string } = {
+    bitcoin: "BTC",
+    ethereum: "ETH",
+    dogecoin: "DOGE",
+  };
+  
+  if (cryptoData.hasOwnProperty(cryptoId)) {
+    cryptoSymbol = cryptoData[cryptoId];
+  }
+  
   useEffect(() => {
-    if (container.current) { // Add a null check
+    if (container.current) {
       const script = document.createElement("script");
-      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+      script.src =
+        "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
       script.type = "text/javascript";
       script.async = true;
       script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "BITSTAMP:BTCUSD",
+          "symbol": "BITSTAMP:${cryptoSymbol}USD",
           "interval": "W",
           "timezone": "Etc/UTC",
           "theme": "light",
@@ -30,8 +42,11 @@ function TradingViewWidget() {
   }, []);
 
   return (
-    <div className="tradingview-widget-container" ref={container} style={{ height: "100%", width: "100%" }}>
-    </div>
+    <div
+      className="tradingview-widget-container"
+      ref={container}
+      style={{ height: "100%", width: "100%" }}
+    ></div>
   );
 }
 

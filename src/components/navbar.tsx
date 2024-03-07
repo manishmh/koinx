@@ -4,7 +4,7 @@ import MobileNavbar from "./mobile-navbar";
 
 const Navbar = () => {
   return (
-    <div className="px-6 md:px-8 py-4 flex justify-between items-center relative shadow-sm">
+    <div className="px-6 md:px-8 py-4 flex justify-between items-center relative shadow-sm overflow-hidden z-50">
       <Image
         src="/logo.png"
         alt="navbar-brand-logo"
@@ -12,7 +12,7 @@ const Navbar = () => {
         height={30}
         className=""
       />
-      <MobileNavbar />
+      {/* <MobileNavbar /> */}
       <div className="gap-6 items-center hidden md:flex">
         <NavbarItem link="/" item="crypto taxes"/>
         <NavbarItem link="/" item="free tools"/>

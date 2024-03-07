@@ -21,14 +21,14 @@ const LowHighBar = ({
   };
   return (
     <div>
-      <div className="flex justify-between items-center gap-12">
-        <div className="text-gray-600 flex-shrink-0">
+      <div className="flex justify-between items-center gap-12 flex-col sm:flex-row">
+        <div className="text-gray-600 flex-shrink-0 ">
           <div className="text-sm">{low}</div>
           <div className="font-medium mt-2">
             {lowPrice.toLocaleString("en-US")}
           </div>
         </div>
-        <div className="h-1.5 rounded-full w-full relative performance-bar">
+        <div className="h-1.5 rounded-full w-full relative performance-bar hidden sm:block">
           {livePrice && (
             <div
               className={`flex flex-col items-center max-w-[100px] absolute`}

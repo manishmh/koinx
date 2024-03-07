@@ -1,15 +1,15 @@
 import HoldingCoinCard from "./holding-coin-card";
 
-const AboutBitcoin = () => {
+const AboutBitcoin = ({ coinData, cryptoId }: {coinData: any, cryptoId: string}) => {
   return (
     <div className="bg-white rounded-lg mt-4 p-4">
       <h1 className="capitalize text-2xl font-semibold text-gray-800 ">
-        About Bitcoin
+        About {cryptoId} 
       </h1>
       <div className="my-4">
-        <h2 className="font-bold text-gray-800">What is Bitcoin?</h2>
+        <h2 className="font-bold text-gray-800">What is { cryptoId }?</h2>
         <p className="text-gray900 mt-2">
-          Bitcoin&apos;s price today is US$16,951.82, with a 24-hour trading
+          { cryptoId }&apos;s price today is US$16,951.82, with a 24-hour trading
           volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is
           currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40%
           from its 7-day all-time low of $16,394.75. BTC has a circulating
@@ -51,9 +51,9 @@ const AboutBitcoin = () => {
         <hr />
         <div className="">
           <h1 className="text-2xl font-semibold pt-6">
-            Already holding Bitcoin?
+            Already holding { cryptoId }?
           </h1>
-          <div className="flex gap-8 my-4">
+          <div className="flex gap-8 my-4 flex-wrap">
             <HoldingCoinCard classname="from-[#75EBA4] to-[#1667AD]" heading="Calculate your Profits"/>
             <HoldingCoinCard classname="from-[#FE9563] to-[#F24039]" heading="Calculate your tax liability"/>
           </div>
