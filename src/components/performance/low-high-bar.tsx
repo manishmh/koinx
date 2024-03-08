@@ -25,7 +25,7 @@ const LowHighBar = ({
         <div className="text-gray-600 flex-shrink-0 w-[70px] md:w-24">
           <div className="text-xs md:text-sm">{low}</div>
           <div className="font-medium mt-2 text-sm md:text-base">
-            {lowPrice.toLocaleString("en-US")}
+            {lowPrice?.toLocaleString("en-US")}
           </div>
         </div>
         <div className="h-1.5 rounded-full w-full relative performance-bar ">
@@ -44,7 +44,7 @@ const LowHighBar = ({
         <div className="text-gray-600 flex-shrink-0 w-[70px] md:w-24">
           <div className="text-xs md:text-sm">{high}</div>
           <div className="font-medium mt-2 text-sm md:text-base">
-            {highPrice.toLocaleString("en-US")}
+            {highPrice?.toLocaleString("en-US")}
           </div>
         </div>
       </div>

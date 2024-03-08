@@ -1,57 +1,47 @@
 import HoldingCoinCard from "./holding-coin-card";
+import { formatLargeNumber } from "../formart-large-number";
+import { divideParagraph } from "../divide-paragraph";
 
-const AboutBitcoin = ({ coinData, cryptoId }: {coinData: any, cryptoId: string}) => {
+const AboutBitcoin = ({ coinData }: {coinData: any }) => {
+  const details = coinData?.description?.en;
+  const [part1, part2, part3] = divideParagraph(details);
+
+
   return (
     <div className="bg-white rounded-lg mt-4 p-4">
       <h1 className="capitalize text-2xl font-semibold text-gray-800 ">
-        About {cryptoId} 
+        About { coinData?.name } 
       </h1>
       <div className="my-4">
-        <h2 className="font-bold text-gray-800">What is { cryptoId }?</h2>
+        <h2 className="font-bold text-gray-800">What is { coinData?.name }?</h2>
         <p className="text-gray900 mt-2">
-          { cryptoId }&apos;s price today is US$16,951.82, with a 24-hour trading
-          volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is
+          { coinData?.name }&apos;s price today is US ${coinData?.usd}, with a 24-hour trading
+          volume of ${ formatLargeNumber(coinData?.usd_market_cap) }. { coinData?.name } is {coinData?.market_data?.price_change_percentage_24h}% in the last 24 hours. It is
           currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40%
-          from its 7-day all-time low of $16,394.75. BTC has a circulating
+          from its 7-day all-time low of $16,394.75. { coinData?.name } has a circulating
           supply of 19.24 BTC and a max supply of 21 MBTC.
         </p>
         <hr className="mt-4" />
       </div>
       <div>
         <h1 className="font-bold text-gray-800 ">
-          Lorem ipsum dolor sit amet
+          Description
         </h1>
         <div className="space-y-6 py-4">
           <p>
-            Lorem ipsum dolor sit amet consectetur. Aliquam placerat sit
-            lobortis tristique pharetra. Diam id et lectus urna et tellus
-            aliquam dictum at. Viverra diam suspendisse enim facilisi diam ut
-            sed. Quam scelerisque fermentum sapien morbi sodales odio sed
-            rhoncus. Ultricies urna volutpat pendisse enim facilisi diam ut sed
-            Quam scelerisque fermentum sapien morbi sodales odio sed rhoncus
+            {part1}
           </p>
           <p>
-            Diam praesent massa dapibus magna aliquam a dictumst volutpat.
-            Egestas vitae pellentesque auctor amet. Nunc sagittis libero
-            adipiscing cursus felis pellentesque interdum. Odio cursus phasellus
-            velit in senectus enim dui. Turpis tristique placerat interdum sed
-            volutpat. Id imperdiet magna eget eros donec cursus nunc. Mauris
-            faucibus diam mi nunc praesent massa turpis a Integer dignissim
-            augue viverra nulla et quis lobortis phasellus. Integer pellentesque
-            enim convallis ultricies at.
+            {part2}
           </p>
           <p>
-            Fermentum hendrerit imperdiet nulla viverra faucibus. Sit aliquam
-            massa vel convallis duis ac. Mi adipiscing semper scelerisque
-            porttitor pulvinar nunc risus, Fermentum potenti iaculis lacinia
-            congue ipsum fames amet dui. Purus ultrices tincidunt volutpat. in
-            eget. Ullamcorper dui
+            {part3}
           </p>
         </div>
         <hr />
         <div className="">
           <h1 className="text-2xl font-semibold pt-6">
-            Already holding { cryptoId }?
+            Already holding { coinData?.name }?
           </h1>
           <div className="flex gap-8 my-4 flex-wrap">
             <HoldingCoinCard classname="from-[#75EBA4] to-[#1667AD]" heading="Calculate your Profits"/>

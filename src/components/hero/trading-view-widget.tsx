@@ -2,22 +2,12 @@
 
 import React, { memo, useEffect, useRef } from "react";
 
-function TradingViewWidget({ cryptoId }: { cryptoId: string }) {
+function TradingViewWidget({ symbol }: { symbol: string }) {
   const container = useRef<HTMLDivElement>(null);
-  let cryptoSymbol = "";
-  
-  const cryptoData: { [key: string]: string } = {
-    bitcoin: "BTC",
-    ethereum: "ETH",
-    dogecoin: "DOGE",
-  };
-  
-  if (cryptoData.hasOwnProperty(cryptoId)) {
-    cryptoSymbol = cryptoData[cryptoId];
-  }
-  
+  const coinSymbol = symbol?.toUpperCase();
+
   useEffect(() => {
-    if (container.current) {
+    if (container.current && coinSymbol) { // Ensure coinSymbol is not undefined
       const script = document.createElement("script");
       script.src =
         "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
@@ -26,7 +16,7 @@ function TradingViewWidget({ cryptoId }: { cryptoId: string }) {
       script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "BITSTAMP:${cryptoSymbol}USD",
+          "symbol": "BITSTAMP:${coinSymbol}USD",
           "interval": "W",
           "timezone": "Etc/UTC",
           "theme": "light",
@@ -39,7 +29,7 @@ function TradingViewWidget({ cryptoId }: { cryptoId: string }) {
         }`;
       container.current.appendChild(script);
     }
-  }, []);
+  }, [coinSymbol]); // Add coinSymbol as a dependency
 
   return (
     <div

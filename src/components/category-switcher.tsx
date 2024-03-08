@@ -9,15 +9,14 @@ import SubCategory from "./sub-category"
 import Teams from "./teams/teams"
 import Tokenomics from "./tokenomics"
 
-const CategorySwitcher = ({ coinData, cryptoId }: { coinData: any, cryptoId: string}) => {
+const CategorySwitcher = ({ coinData }: { coinData: any }) => {
   const [activeCategory, setActiveCategory] = useState<string>("overview")
-  console.log(activeCategory)
   const handleActiveCategory = (category: string) => {
     setActiveCategory(category)
   }
   return (
     <div className="mt-8">
-        <div className="flex gap-6 relative overflow-scroll">
+        <div className="flex gap-6 relative overflow-x-scroll scroll-bar ">
             <div className="h-[1px] bg-gray-300 w-full absolute bottom-0"></div>
             <SubCategory category="Overview" onClick={() => handleActiveCategory("overview")} activeCategory={activeCategory}/>
             <SubCategory category="Fundamentals" onClick={() => handleActiveCategory("fundamentals")} activeCategory={activeCategory}/>
@@ -28,7 +27,7 @@ const CategorySwitcher = ({ coinData, cryptoId }: { coinData: any, cryptoId: str
             <SubCategory category="Tokenomics" onClick={() => handleActiveCategory("tokenomics")} activeCategory={activeCategory}/>
         </div>
         {activeCategory === "overview" &&  (
-            <Performance activeCategory={activeCategory} currentValue={coinData && coinData.usd}/>
+            <Performance activeCategory={activeCategory} coinData={coinData && coinData}/>
         )}
         {(activeCategory === "overview" || activeCategory === "fundamentals") && (
             <Fundamentals activeCategory={activeCategory} coinData={coinData && coinData} />
@@ -37,7 +36,7 @@ const CategorySwitcher = ({ coinData, cryptoId }: { coinData: any, cryptoId: str
             <Sentiments />
         )}
         {(activeCategory === "overview" || activeCategory === "new insights") && (
-            <AboutBitcoin coinData={coinData && coinData} cryptoId={cryptoId}/>
+            <AboutBitcoin coinData={coinData && coinData} />
         )}
         {(activeCategory === "overview" || activeCategory === "tokenomics") && (
             <Tokenomics />

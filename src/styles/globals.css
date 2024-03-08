@@ -5,3 +5,8 @@
 .performance-bar {
     background-image: linear-gradient(to right, #FF4A45, #FD8D0B, #f3ce8a, #21E963);
 }
+
+.scroll-bar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
