@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CarouselCard from "./carousel-card";
+import "@/styles/globals.css"
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,7 +42,7 @@ const Carousel = () => {
 
   return (
     <div className="relative">
-      <div className="flex gap-4 my-4 overflow-hidden">
+      <div className="flex gap-4 my-4 overflow-hidden overflow-x-scroll scroll-bar">
         <div
           className="bg-white border border-gray-300 w-10 h-10 rounded-full absolute flex justify-center items-center -right-4 top-1/2 -translate-y-1/2 shadow-lg cursor-pointer z-50"
           onClick={handleNext}

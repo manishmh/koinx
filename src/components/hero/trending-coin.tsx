@@ -1,25 +1,8 @@
 "use client";
 
-import { CryptoDetails } from "@/api/CryptoDetails";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
-const TrendingCoin = () => {
-  const [trendingCoins, setTrendingCoins] = useState<any>(null);
-  useEffect(() => {
-    const url = "https://api.coingecko.com/api/v3/search/trending";
-    CryptoDetails(url)
-      .then((data) => {
-        console.log("trendings: ", data);
-        if (data?.coins && data.coins.length > 0) {
-          const top10Coins = data.coins.slice(0, 10);
-          setTrendingCoins(top10Coins);
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
+const TrendingCoin = ({ trendingCoins }: { trendingCoins: any }) => {
 
   return (
     <div className="bg-white max-w-sm rounded-xl px-4 py-6 w-full">
@@ -27,8 +10,7 @@ const TrendingCoin = () => {
       <div className="flex flex-col gap-4 mt-4">
         {trendingCoins &&
           trendingCoins.map((coin: any, index: number) => {
-            const priceChangePercentage =
-              coin.item.price_change_percentage_24h?.usd;
+            const priceChangePercentage = (coin.item.data.price_change_percentage_24h?.usd).toFixed(2);
             return (
               <TrendingComponent
                 key={index}
@@ -59,19 +41,21 @@ function TrendingComponent({
   percentage: number;
 }) {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center gap-2">
       <div className="flex gap-2">
-        <Image
-          src={img}
-          alt={`trending-coin-image-${name}`}
-          width={25}
-          height={25}
-          className="rounded-full"
-        />
-        <h1 className="font-medium">{name}</h1>
+        <div className="flex-shrink-0">
+          <Image
+            src={img}
+            alt={`trending-coin-image-${name}`}
+            width={25}
+            height={25}
+            className="rounded-full"
+          />
+        </div>
+        <h1 className="font-medium text-sm md:textbase">{name}</h1>
       </div>
       <div className="bg-green-100 px-4 py-1 rounded-md w-[80px] flex items-center justify-center">
-        <div className="text-green-700">{percentage}%</div>
+        <div className="text-green-700 text-xs md:text-base">{percentage}%</div>
       </div>
     </div>
   );
