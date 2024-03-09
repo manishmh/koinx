@@ -36,13 +36,13 @@ const MayAlsoLike = ({ trendingCoins }: { trendingCoins: any }) => {
       <div className="relative">
         <div className="flex overflow-x-scroll scroll-bar overflow-hidden gap-4 py-4">
           <div
-            className="hidden md:flex bg-border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -left-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
+            className="flex bg-border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -left-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
             onClick={() => handlePrev("c1")}
           >
             <FaChevronLeft className="text-gray-600"/>
           </div>
           <div
-            className="hidden md:flex bg-white border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -right-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
+            className="flex bg-white border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -right-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
             onClick={() => handleNext("c1")}
           >
             <FaChevronRight className="text-gray-600"/>
@@ -56,13 +56,13 @@ const MayAlsoLike = ({ trendingCoins }: { trendingCoins: any }) => {
       {/* second carousel */}
       <div className="relative">
           <div
-            className="hidden md:flex bg-white border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -left-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
+            className="flex bg-white border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -left-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
             onClick={() => handlePrev("c2")}
           >
             <FaChevronLeft className="text-gray-600"/>
           </div>
           <div
-            className="hidden md:flex bg-white border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -right-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
+            className="flex bg-white border border-gray-100 w-10 h-10 rounded-full flex-shrink-0 justify-center items-center absolute -right-4 top-1/2 -translate-y-1/2 shadow-md cursor-pointer z-20"
             onClick={() => handleNext("c2")}
           >
             <FaChevronRight className="text-gray-600"/>
