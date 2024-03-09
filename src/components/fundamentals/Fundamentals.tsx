@@ -6,8 +6,8 @@ const Fundamentals = ({ activeCategory, coinData }: { activeCategory: string, co
   const VolumeToMarketRatio = volume / market_cap;
   return (
     <div
-      className={`bg-white rounded-b-lg font-semibold text-gray-700 px-4 py-12 flex flex-col justify-center
-            ${activeCategory === "fundamentals" && "rounded-t-lg mt-4"} 
+      className={`bg-white border md:border-none border-t-0 shadow-sm rounded-b-lg font-semibold text-gray-700 px-4 py-12 flex flex-col justify-center
+            ${activeCategory === "fundamentals" && "rounded-t-lg mt-4 border-t"} 
         `}
     >
       <h1 className="pb-4 text-xl">Fundamentals</h1>

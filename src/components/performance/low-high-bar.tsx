@@ -25,7 +25,7 @@ const LowHighBar = ({
         <div className="text-gray-600 flex-shrink-0 w-[70px] md:w-24">
           <div className="text-xs md:text-sm">{low}</div>
           <div className="font-medium mt-2 text-sm md:text-base">
-            {lowPrice?.toLocaleString("en-US")}
+            ${lowPrice?.toLocaleString("en-US")}
           </div>
         </div>
         <div className="h-1.5 rounded-full w-full relative performance-bar ">
@@ -35,16 +35,16 @@ const LowHighBar = ({
               style={{ left: `${calculatePercentage()}%`}}
             >
               <GoTriangleUp className="text-lg mt-[2px]" />
-              <div className="text-gray-600">
+              <div className="text-gray-600 text-xs md:text-base">
                 ${livePrice?.toLocaleString("en-US")}
               </div>
             </div>
           )}
         </div>
         <div className="text-gray-600 flex-shrink-0 w-[70px] md:w-24">
-          <div className="text-xs md:text-sm">{high}</div>
-          <div className="font-medium mt-2 text-sm md:text-base">
-            {highPrice?.toLocaleString("en-US")}
+          <div className="text-xs md:text-sm text-right">{high}</div>
+          <div className="font-medium mt-2 text-sm md:text-base text-right">
+            ${highPrice?.toLocaleString("en-US")}
           </div>
         </div>
       </div>

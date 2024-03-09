@@ -19,7 +19,7 @@ const TeamsCard = ({
           alt={`team-member-image-${memberName}`}
           width={120}
           height={140}
-          className="rounded-md"
+          className="rounded-md w-auto h-auto"
         />
         <h1 className="text-center font-semibold mt-2">{ memberName }</h1>
         <h2 className="text-center text-gray-500 text-xs">{ designation }</h2>

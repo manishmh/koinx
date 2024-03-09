@@ -8,7 +8,7 @@ const AboutBitcoin = ({ coinData }: {coinData: any }) => {
 
 
   return (
-    <div className="bg-white rounded-lg mt-4 p-4">
+    <div className="bg-white rounded-lg mt-4 p-4 border shadow-sm md:border-none">
       <h1 className="capitalize text-2xl font-semibold text-gray-800 ">
         About { coinData?.name } 
       </h1>

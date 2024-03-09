@@ -10,7 +10,7 @@ const Navbar = () => {
         alt="navbar-brand-logo"
         width={100}
         height={30}
-        className=""
+        className="w-auto h-auto"
       />
       <MobileNavbar />
       <div className="gap-6 items-center hidden md:flex">

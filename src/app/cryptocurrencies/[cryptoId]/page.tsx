@@ -14,7 +14,7 @@ const Crypto = ({ params }: { params: any }) => {
 
   return (
     <div className="bg-[#EFF2F5] ">
-      <div className="max-w-[1980px] mx-auto px-4 md:px-8 pb-4 ">
+      <div className="max-w-[1980px] mx-auto pb-4 ">
         <SingleCryptoPage cryptoId={cryptoId} />
       </div>
     </div>

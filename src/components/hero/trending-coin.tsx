@@ -5,11 +5,11 @@ import Image from "next/image";
 const TrendingCoin = ({ trendingCoins }: { trendingCoins: any }) => {
 
   return (
-    <div className="bg-white max-w-sm rounded-xl px-4 py-6 w-full">
+    <div className="bg-white max-w-sm rounded-xl px-4 py-6 w-full border md:border-none shadow-sm">
       <h1 className="font-semibold text-xl">Trending Coins (24h)</h1>
       <div className="flex flex-col gap-4 mt-4">
         {trendingCoins &&
-          trendingCoins.map((coin: any, index: number) => {
+          trendingCoins.slice(0,3).map((coin: any, index: number) => {
             const priceChangePercentage = (coin.item.data.price_change_percentage_24h?.usd).toFixed(2);
             return (
               <TrendingComponent
@@ -49,7 +49,7 @@ function TrendingComponent({
             alt={`trending-coin-image-${name}`}
             width={25}
             height={25}
-            className="rounded-full"
+            className="rounded-full "
           />
         </div>
         <h1 className="font-medium text-sm md:textbase">{name}</h1>

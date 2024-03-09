@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import CategorySwitcher from "../category-switcher";
+import MayAlsoLike from "../may-also-like/may-also-like";
 import ChevronRight from "../svgs/chevron-right";
 import CryptoRankHeader from "./crypto-rank-header";
 import GetStarted from "./get-started";
@@ -13,7 +14,6 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
   const [coinData, setCoinData] = useState<any>(null);
   const [trendingCoins, setTrendingCoins] = useState<any>(null);
 
-  console.log("coindata", coinData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,31 +43,34 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
 
   return (
     <>
-      <div className="flex items-center py-2">
-        <span className="text-[#6b7275]">Cryptocurrencies</span>
-        <ChevronRight />
-        <span className="capitalize">{cryptoId}</span>
-      </div>
-      <div className="flex justify-between gap-4 flex-col xl:flex-row">
-        <div className="w-full flex flex-col gap-4">
-          <div className="h-full bg-white p-4 rounded-lg">
-            <CryptoRankHeader coinData={coinData} />
-            <HeroCryptoPrice
-              usd={coinData?.market_data?.current_price?.usd}
-              inr={coinData?.market_data?.current_price?.inr}
-              percent={coinData?.market_data?.price_change_percentage_24h}
-            />
-            <div className="h-[500px] overflow-hidden mt-4">
-              <TradingViewWidget symbol={coinData?.symbol} />
+      <div className="px-4 md:px-8">
+        <div className="flex items-center py-2">
+          <span className="text-[#6b7275]">Cryptocurrencies</span>
+          <ChevronRight />
+          <span className="capitalize">{cryptoId}</span>
+        </div>
+        <div className="flex justify-between gap-4 flex-col xl:flex-row">
+          <div className="w-full flex flex-col gap-4">
+            <div className="h-full bg-white p-4 rounded-lg border md:border-none">
+              <CryptoRankHeader coinData={coinData} />
+              <HeroCryptoPrice
+                usd={coinData?.market_data?.current_price?.usd}
+                inr={coinData?.market_data?.current_price?.inr}
+                percent={coinData?.market_data?.price_change_percentage_24h}
+              />
+              <div className="h-[400px] md:h-[500px] overflow-hidden mt-4 ">
+                <TradingViewWidget symbol={coinData?.symbol} />
+              </div>
             </div>
+            <CategorySwitcher coinData={coinData} />
           </div>
-          <CategorySwitcher coinData={coinData} />
-        </div>
-        <div className="flex-shrink-0 flex flex-wrap gap-4 xl:flex-col">
-          <GetStarted />
-          <TrendingCoin trendingCoins={trendingCoins} />
+          <div className="flex-shrink-0 flex flex-wrap gap-4 xl:flex-col">
+            <GetStarted />
+            <TrendingCoin trendingCoins={trendingCoins} />
+          </div>
         </div>
       </div>
+      <MayAlsoLike trendingCoins={trendingCoins} />
     </>
   );
 };

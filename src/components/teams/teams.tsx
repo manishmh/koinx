@@ -2,7 +2,7 @@ import TeamsCard from "./teams-card";
 
 const Teams = () => {
   return (
-    <div className="bg-white mt-4 p-4 rounded-lg pb-8">
+    <div className="bg-white mt-4 p-4 rounded-lg pb-8 border md:border-none shadow-sm">
       <h1 className="text-gray-800 font-semibold text-2xl">Team</h1>
       <p className="py-4 mt-2 mb-4 md:mb-0">
         Lorem ipsum dolor sit amet consectetur. Aliquam placerat sit lobortis

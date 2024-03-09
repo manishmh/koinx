@@ -24,10 +24,11 @@ const CarouselCard = ({
           alt={`carousel-card-image-${img}`}
           width={30}
           height={30}
+          className="w-auto h-auto"
         />
       </div>
       <div className="">
-        <h1 className="font-medium text-gray-700">{heading}</h1>
+        <h1 className="font-medium text-gray-700 leading-5 ">{heading}</h1>
         <p className="text-sm text-gray-700 mt-2">{paragraph}</p>
       </div>
     </div>

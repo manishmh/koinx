@@ -44,13 +44,13 @@ const Carousel = () => {
     <div className="relative">
       <div className="flex gap-4 my-4 overflow-hidden overflow-x-scroll scroll-bar">
         <div
-          className="bg-white border border-gray-300 w-10 h-10 rounded-full absolute flex justify-center items-center -right-4 top-1/2 -translate-y-1/2 shadow-lg cursor-pointer z-50"
+          className="hidden sm:flex bg-white border border-gray-300 w-10 h-10 rounded-full absolute justify-center items-center -right-4 top-1/2 -translate-y-1/2 shadow-lg cursor-pointer z-50"
           onClick={handleNext}
         >
           <FaChevronRight />
         </div>
         <div
-          className="bg-white border border-gray-300 w-10 h-10 rounded-full absolute flex justify-center items-center -left-4 top-1/2 -translate-y-1/2 shadow-lg cursor-pointer z-50"
+          className="hidden sm:flex bg-white border border-gray-300 w-10 h-10 rounded-full absolute justify-center items-center -left-4 top-1/2 -translate-y-1/2 shadow-lg cursor-pointer z-50"
           onClick={handlePrev}
         >
           <FaChevronLeft />

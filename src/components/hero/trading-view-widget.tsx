@@ -7,7 +7,8 @@ function TradingViewWidget({ symbol }: { symbol: string }) {
   const coinSymbol = symbol?.toUpperCase();
 
   useEffect(() => {
-    if (container.current && coinSymbol) { // Ensure coinSymbol is not undefined
+    if (container.current && coinSymbol) {
+      // Ensure coinSymbol is not undefined
       const script = document.createElement("script");
       script.src =
         "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
@@ -23,8 +24,9 @@ function TradingViewWidget({ symbol }: { symbol: string }) {
           "style": "2",
           "locale": "en",
           "enable_publishing": false,
-          "allow_symbol_change": true,
           "calendar": false,
+          "hide_legend": true,
+          "hide_volume": true,
           "support_host": "https://www.tradingview.com"
         }`;
       container.current.appendChild(script);

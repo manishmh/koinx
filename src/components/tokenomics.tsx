@@ -2,7 +2,7 @@ const Tokenomics = () => {
     const crowdscale = 80;
     const foundation = 20;
   return (
-    <div className="p-4 bg-white rounded-lg mt-4">
+    <div className="p-4 bg-white rounded-lg mt-4 border md:border-none shadow-sm">
       <h1 className="text-gray-800 text-2xl font-semibold">Tokenomics</h1>
       <h2 className="font-semibold text-gray-800 py-4 text-xl">
         Initial Distribution
