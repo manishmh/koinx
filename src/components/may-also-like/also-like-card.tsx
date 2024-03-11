@@ -3,7 +3,7 @@ import Image from "next/image";
 const AlsoLikeCard = ({  coin, translateX }: { coin: any, translateX: string }) => {
     const percent = 3;
   return (
-    <div className="border rounded-lg p-2 md:p-4 flex-shrink-0 max-w-sm transition-all duration-500" style={{ transform: translateX }}>
+    <div className="border rounded-lg p-2 md:p-4 flex-shrink-0 max-w-sm add-duration" style={{ transform: translateX }}>
       <div className="flex items-center gap-2">
         <div>
           <Image
