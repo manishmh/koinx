@@ -12,7 +12,7 @@ const Navbar = () => {
         height={30}
         className="w-auto h-auto"
       /> */}
-      <div className="text-xl md:text-2xl text-bold uppercase">Crypto</div>
+      <div className="text-lg md:text-xl text-extrabold uppercase">Crypto</div>
       <MobileNavbar />
       <div className="gap-6 items-center hidden md:flex">
         <NavbarItem link="/" item="crypto taxes"/>
