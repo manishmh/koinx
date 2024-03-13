@@ -5,13 +5,14 @@ import MobileNavbar from "./mobile-navbar";
 const Navbar = () => {
   return (
     <div className="px-6 md:px-8 py-4 flex justify-between items-center shadow-sm overflow-hidden z-50 max-w-[1980px] mx-auto">
-      <Image
+{/*       <Image
         src="/logo.png"
         alt="navbar-brand-logo"
         width={100}
         height={30}
         className="w-auto h-auto"
-      />
+      /> */}
+      <div className="text-xl md:text-2xl text-bold uppercase">Crypto</div>
       <MobileNavbar />
       <div className="gap-6 items-center hidden md:flex">
         <NavbarItem link="/" item="crypto taxes"/>
