@@ -17,7 +17,6 @@ const SingleCryptoPage = ({ cryptoId }: { cryptoId: string }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=inr%2Cusd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`;
       const trendingUrl = "https://api.coingecko.com/api/v3/search/trending";
       const coinInformationUrl = `https://api.coingecko.com/api/v3/coins/${cryptoId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
 

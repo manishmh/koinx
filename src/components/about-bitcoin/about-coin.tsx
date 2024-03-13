@@ -28,14 +28,11 @@ const AboutBitcoin = ({ coinData }: {coinData: any }) => {
           Description
         </h1>
         <div className="space-y-6 py-4">
-          <p>
-            {part1}
+          <p dangerouslySetInnerHTML={{ __html: part1 }}>
           </p>
-          <p>
-            {part2}
+          <p dangerouslySetInnerHTML={{ __html: part2 }}>
           </p>
-          <p>
-            {part3}
+          <p dangerouslySetInnerHTML={{ __html: part3 }}>
           </p>
         </div>
         <hr />
