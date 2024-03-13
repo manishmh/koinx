@@ -8,9 +8,9 @@ const Crypto = ({ params }: { params: any }) => {
   const cryptoId = params.cryptoId;
   const crypto = cryptoData.find((crypto: any) => crypto === cryptoId);
 
-  if (!crypto) {
-    return <div>Crypto not found</div>;
-  }
+  // if (!crypto) {
+  //   return <div>Crypto not found</div>;
+  // }
 
   return (
     <div className="bg-[#EFF2F5] ">
