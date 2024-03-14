@@ -7,10 +7,10 @@ const GetStarted = () => {
       <div className="flex justify-center items-center flex-col-reverse md:flex-col">
         <div className="flex-col-reverse md:flex-col">
           <h1 className="font-semibold md:text-lg">
-            Get Started with Koinx <br className="hidden md:block" /> for FREE
+            Get Started with Crypto Tracker <br className="hidden md:block" /> for FREE
           </h1>
           <h2 className="text-xs mt-2 md:mt-4 md:w-11/12 mx-auto">
-            With our range of features that you can equip for free, Koinx allows
+            With our range of features that you can equip for free, Crypto Tracker allows
             you to be more educated and aware of tax reports.
           </h2>
         </div>
