@@ -12,6 +12,7 @@ const Navbar = () => {
         height={30}
         className="w-auto h-auto"
       /> */}
+      
       <div className="text-md md:text-lg font-semibold uppercase">Crypto Tracker</div>
       <MobileNavbar />
       <div className="gap-6 items-center hidden md:flex">
