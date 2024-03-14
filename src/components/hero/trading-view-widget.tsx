@@ -6,6 +6,7 @@ function TradingViewWidget({ symbol }: { symbol: string }) {
   const container = useRef<HTMLDivElement>(null);
   const coinSymbol = symbol?.toUpperCase();
 
+
   useEffect(() => {
     if (container.current && coinSymbol) {
       // Ensure coinSymbol is not undefined
